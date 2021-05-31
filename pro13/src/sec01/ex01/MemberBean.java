@@ -1,6 +1,6 @@
-package sec02.ex01;
+package sec01.ex01;
 
-public class MemberVO {
+public class MemberBean {
 	private String id ;
 	private String pwd ;
 	private String name ;
@@ -9,7 +9,7 @@ public class MemberVO {
 	
 	
 	
-	public MemberVO(String id, String pwd, String name, String email) {
+	public MemberBean(String id, String pwd, String name, String email) {
 		super();
 		this.id = id;
 		this.pwd = pwd;
@@ -17,6 +17,10 @@ public class MemberVO {
 		this.email = email;
 	}
 	
+	public MemberBean() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getId() {
 		return id;
 	}
