@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+	function fn_process() {
+	$.ajax({
+		type:"post",
+		dataType:"xml",
+		async:false,
+		url:"http://localhost:8991/pro16/ajaxTest1",
+		data:{param:"Hello,jquery"},
+		success:function(data,textStatus){
+			var title = $(this).find("title").text();
+			var writer = $(this).find("writer").text();
+			var image = $(this).find("image").text();
+			$('#bookInfo').append(
+				"<p>"+title+"</p>"+
+				"<p>"+writer+"</p>"+	
+				"<img src = "+image+" >"	
+			);
+		},
+		error:function(data,textStatus){
+			alert("에러가 발생했습니다.");
+		},
+		complete:function(data,textStatus){
+			alert("작업을 완료했습니다.");
+		}
+	});
+	}
+</script>
+</head>
+<body>
+</body>
+</html>
